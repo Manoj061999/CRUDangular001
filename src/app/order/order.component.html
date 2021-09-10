@@ -1,0 +1,66 @@
+<body class="body">
+    <h1>Create Order</h1>
+    <form [formGroup]="OrderData" (ngSubmit)="OrderDetails()">
+        <label>
+            <input type="text" placeholder="OrderId" formControlName="orderId">
+        </label> <br>
+
+        <label>
+            <div>
+                <input id="cash" type="radio" value="cash" name="paymentmethod" formControlName="paymentmethod">
+                <label for="cash">CASH</label>
+               </div>
+            <div>
+                <input id="Card" type="radio" value="Card" name="paymentmethod" formControlName="paymentmethod">
+                <label for="Card">CARD</label>
+               </div>
+            <div>
+                 <input id="online" type="radio" value="online" name="paymentmethod" formControlName="paymentmethod">
+                 <label for="onlone">ONLINE / NETBANKING</label>
+             </div> 
+        </label> <br>
+
+        <label>
+            <input class="customername" type="text" placeholder="customername" formControlName="customername">
+        </label> 
+
+        <label>
+            <input class="email" type="email" placeholder="email" formControlName="email">
+        </label> <br>
+
+        <label>
+           <div>
+               <h5><b>branch :</b></h5>
+            <select name="branch" id="branch" value="branch" formControlName="branch">
+                <option value="chennai">CHENNAI</option>
+                <option value="Kolkata">KOLKATA</option>
+                <option value="others">OTHERS</option>
+            </select>
+           </div>
+        </label> 
+
+        <label>
+            <input class="pincode" type="number" placeholder="pincode" formControlName="pincode">
+        </label> <br>
+
+        <label>
+            <input type="number" placeholder="phone number" formControlName="phone">
+        </label> <br>
+
+        <button (click)="CreateOrderFun()" type="submit" value="button">Create Order</button>
+        <p class="order"><b>{{createOrder}}</b></p>
+    </form>
+
+    <h1>LOGIN ORDER (FIND )</h1>
+    <form class="Orderdata" [formGroup]="OrderLogindata" (ngSubmit)="LoginFunction()">
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+        <label>
+            <input type="number" placeholder="phone number" formControlName="phone">
+        </label> <br>
+
+        <button (click)="LoginOrderFun()" class="Loginbutton" type="submit" value="button">Login Order</button>
+        <p><b>{{LoginOrder}}</b></p>
+    </form>
+</body>

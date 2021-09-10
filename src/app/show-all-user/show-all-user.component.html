@@ -1,0 +1,96 @@
+<!-- USER DETAILS -->
+ <div>
+    <h1><b>user details</b></h1>
+    <table>
+       <thead>
+          <tr>
+             <th>_id</th> <br>
+             <th>UserName</th> <br>
+             <th>UserId</th> <br>
+             <th>email</th> <br>
+             <th>password</th> <br>
+             <th>phone</th> <br>
+             <th>address</th> <br>
+             <th>gender</th> <br>
+           
+          </tr>
+       </thead>
+       <!-- CONDITION -->
+       <tbody *ngIf="a">
+          <tr *ngFor="let items of finduser">
+             <th>{{ items._id }}</th> <br>
+             <th>{{ items.UserName }}</th> <br>
+             <td>{{ items.UserId }}</td> <br>
+             <td>{{ items.email }}</td> <br>
+             <td>{{ items.password }}</td> <br>
+             <td>{{ items.phone }}</td> <br>
+             <td>{{ items.address }}</td> <br>
+             <td>{{ items.gender }}</td> <br>
+          </tr>
+       </tbody>
+       <div *ngIf="b">
+          <p><b>{{finduser}}</b></p>
+       </div>
+    </table>
+ </div>
+
+<!-- PRODUCT DETAILS -->
+
+ <div>
+   <h1><b>product details</b></h1>
+   <table>
+      <thead>
+         <tr>
+            <th>_id</th> <br>
+            <th>productname</th> <br>
+            <th>productId</th> <br>
+            <th>customerId</th> <br>
+            <th>email</th> <br>
+            <th>age</th> <br>
+            <th>date</th> <br>
+            <th>phone</th>
+            <th>address</th> <br>
+          
+         </tr>
+      </thead>
+      <!-- CONDITION -->
+      <tbody *ngIf="yes">
+         <tr *ngFor="let items of findproduct">
+            <th>{{ items._id }}</th> <br>
+            <th>{{ items.productname }}</th> <br>
+            <td>{{ items.productId }}</td> <br>
+            <td>{{ items.customerId }}</td> <br>
+            <td>{{ items.email}}</td> <br>
+            <td>{{ items.age }}</td> <br>
+            <td>{{ items.date }}</td> <br>
+            <td>{{ items.phone }}</td> <br>
+            <td>{{ items.address }}</td>
+         </tr>
+      </tbody>
+      <div *ngIf="no">
+         <p class="findpro"><b>{{findproduct}}</b></p>
+      </div>
+   </table>
+</div>
+
+<!-- order details -->
+
+<h1>Orders details</h1>
+
+<!-- //condition -->
+<div *ngIf="correct">
+   <ul *ngFor="let items of findOrder">
+       <li><b>ID :</b>{{ items._id }}</li>
+       <li><b>ORDER ID :</b>{{ items.orderId }}</li>
+       <li><b>PAYMENT METHOD :</b>{{ items.paymentmethod }}</li>
+       <li><b>CUSTOMER NAME :</b>{{ items.customername }}</li>
+       <li><b>EMAIL ID :</b>{{ items.email }}</li>
+       <li><b>BRANCH :</b>{{ items.branch }}</li>
+       <li><b>PINCODE :</b>{{ items.pincode }}</li>
+       <li><b>PHONE :</b>{{ items.phone }}</li>
+   </ul>
+</div>
+<div *ngIf="wrong">
+   <p><b>{{findOrder}}</b></p>
+   </div>
+ 

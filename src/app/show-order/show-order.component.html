@@ -1,0 +1,64 @@
+<body>
+<h1>SHow Order details</h1>
+<form [formGroup]="showOrder" (ngSubmit)="ShowOrderFunction()">
+    <label>
+        <input type="email" placeholder="email" formControlName="email">
+    </label> <br>
+
+    <button (click)="showOrdersFun()" type="submit" value="button">show Order</button>
+
+    <!-- condition -->
+    <div *ngIf="a">
+        <ul *ngFor="let data of showdata">
+            <li><b>ID :</b>{{ data._id }}</li>
+            <li><b>ORDER ID :</b>{{ data.orderId }}</li>
+            <li><b>PAYMENT METHOD :</b>{{ data.paymentmethod }}</li>
+            <li><b>CUSTOMER NAME :</b>{{ data.customername }}</li>
+            <li><b>EMAIL ID :</b>{{ data.email }}</li>
+            <li><b>BRANCH :</b>{{ data.branch }}</li>
+            <li><b>PINCODE :</b>{{ data.pincode }}</li>
+            <li><b>PHONE :</b>{{ data.phone }}</li>
+        </ul>
+</div>
+<div *ngIf="b">
+    <p class="showdata"><b>{{showdata}}</b></p>
+</div>
+</form>
+
+<!-- update  -->
+
+<h1>UPDATE RECORDS</h1>
+<h4>find by using mail</h4>
+<form [formGroup]="updateOrders" (ngSubmit)="Updatedetails()">
+<label>
+    <input type="email" placeholder="email" formControlName="email">
+</label> <br>
+
+<h4>update</h4>
+
+<label>
+    <input type="text" placeholder="customername" formControlName="customername">
+</label> <br>
+
+<label>
+    <input type="number" placeholder="pincode" formControlName="pincode">
+</label> <br>
+
+<button (click)="UpdateOrderFun()" type="submit" value="button">Update Record</button>
+<p class="update"><b>{{updatedata}}</b></p>
+</form>
+
+<!-- DELETE  -->
+
+<h1>DELETE RECORDS</h1>
+<form [formGroup]="deletedata" (ngSubmit)="deleteOrderFunction()">
+<label>
+    <input type="email" placeholder="email" formControlName="email">
+</label> <br>
+
+<button (click)="DeleteFun()" type="submit" value="button">Delete</button>
+
+<!-- <div *ngIf="showmsg; else showelse" >show message</div>
+<ng-template #showelse>show else message</ng-template> -->
+</form>
+</body>

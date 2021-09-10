@@ -1,0 +1,106 @@
+<body>
+    <h1>Product registration :</h1>
+    <form [formGroup]="productdetails" (ngSubmit)="productfunction()">
+        <label>
+            <input type="text" placeholder="productName" formControlName="productname">
+        </label> <br>
+        <label>
+            <input type="text" placeholder="productId" formControlName="productId">
+        </label> <br>
+        <label>
+            <input type="text" placeholder="customerId" formControlName="customerId">
+        </label> <br>
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+        <label>
+            <input type="number" placeholder="age" formControlName="age">
+        </label> <br>
+        <label>
+            <input type="date" placeholder="date" formControlName="date">
+        </label> <br>
+        <label>
+            <input type="number" placeholder="phone number" formControlName="phone">
+        </label> <br>
+        <label>
+            <input type="text" placeholder="address" formControlName="address">
+        </label> <br>
+
+        <button (click)="productFun()" type="submit" value="button">create product</button>
+        <p class="details"><b>{{details}}</b></p>
+
+        <!-- find product -->
+
+        <form [formGroup]="finddetails" (ngSubmit)="findFunction()">
+            <h1>find product:</h1>
+            <label>
+                <input type="email" placeholder="email" formControlName="email">
+            </label> <br>
+            <label>
+                <input type="text" placeholder="customerId" formControlName="customerId">
+            </label> <br>
+
+            <button (click)="findproductFun()" type="submit" value="button">find</button>
+            <p class="details"><b>{{find}}</b></p>
+        </form>
+
+        <!-- update product details -->
+
+        <h1>Update your details</h1>
+        <form [formGroup]="updatedetails" (ngSubmit)="updateFunction()">
+            <h3>customerId :</h3>
+            <label>
+                <input type="text" placeholder="CustomerId" formControlName="customerId">
+            </label> <br>
+
+            <h3>what you need to update :</h3>
+            <label>
+                <input type="number" placeholder="phone number" formControlName="phone">
+            </label> <br>
+            <label>
+                <input type="text" placeholder="address" formControlName="address">
+            </label> <br>
+
+            <button (click)="updateproductFun()" type="submit" value="button">update</button>
+        </form>
+
+            <!-- delete product -->
+            <h1>delete your product details:</h1>
+            <form [formGroup]="deletedata" (ngSubmit)="deleteFunction()">
+                <label>
+                    <input type="text" placeholder="customerId" formControlName="customerId">
+                </label> <br>
+
+                <button (click)="deleteproductFun()" type="submit" value="button">delete</button>
+                <p class="delete"><b>{{Delete}}</b></p>
+            </form>
+
+            <!-- show product -->
+
+            <h1>show your product</h1>
+            <form [formGroup]="showdata" (ngSubmit)="showproductFunction()">
+                <label>
+                    <input type="email" placeholder="email" formControlName="email">
+                </label>  <br>
+                <button (click)="showproductFun()" type="submit" value="button">show</button>
+
+                <div *ngIf="correct">
+                        <ul *ngFor="let data of showpro">
+                            <li><b>ID :</b>{{ data._id }}</li>
+                            <li><b>PRODUCT NAME :</b>{{ data.productname }}</li>
+                            <li><b>PRODUCT ID :</b>{{ data.productId }}</li>
+                            <li><b>CUSTOMER ID :</b>{{ data.customerId }}</li>
+                            <li><b>EMAIL ID :</b>{{ data.email }}</li>
+                            <li><b>AGE :</b>{{ data.age }}</li>
+                            <li><b>DATE :</b>{{ data.date }}</li>
+                            <li><b>PHONE :</b>{{ data.phone }}</li>
+                            <li><b>ADDRESS :</b>{{ data.address }}</li>
+                        </ul>
+                </div>
+                
+                <div *ngIf="wrong">
+                    <p><b>{{showpro}}</b></p>
+                </div>
+            </form>
+    </form>
+</body>

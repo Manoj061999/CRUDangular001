@@ -1,0 +1,31 @@
+.body{
+    background-color: #f3d782;
+}
+
+
+.pincode {
+    margin-left: 10px;
+}
+
+.email {
+    margin-left: 10px;
+}
+.order{
+    text-align: center;
+}
+.Orderemail {
+    margin-left: 50px;
+}
+.Orderphone {
+    margin-left: 50px;
+}
+.Orderdata{
+    margin-left: 50px;
+}
+.Loginbutton {
+    margin-left: 42px;
+}
+
+
+
+

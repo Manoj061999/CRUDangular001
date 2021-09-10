@@ -1,0 +1,43 @@
+<body>
+    <h1>registration</h1>
+    <form [formGroup]="userdata" (ngSubmit)="UserFunction()">
+        <label>
+            <input type="text" placeholder="username" formControlName="username">
+        </label> <br>
+        <label>
+            <input type="text" placeholder="userid" formControlName="userid">
+        </label> <br>
+        <label>
+            <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+        <label>
+            <input type="password" placeholder="password" formControlName="password">
+        </label> <br>
+        <label>
+            <input type="number" placeholder="phone number" formControlName="phone">
+        </label> <br>
+        <label>
+            <input type="text" placeholder="Address" formControlName="address">
+        </label> <br>
+        <label>
+            <div>
+                <input id="male" type="radio" value="male" name="gender" formControlName="gender">
+                <label for="male">Male</label>
+              </div>
+              <div>
+                <input id="female" type="radio" value="female" name="gender" formControlName="gender">
+                <label for="female">Female</label>
+             </div>
+              <div>
+                 <input id="others" type="radio" value="others" name="gender" formControlName="gender">
+                 <label for="others">Others</label>
+             </div> 
+        </label> <br>
+
+        <button (click)="getUserFun()" type="submit" value="button">Create</button> 
+        <h3 class="Create">{{users}}</h3>
+
+        <hr>
+        <hr>
+    </form>
+</body>

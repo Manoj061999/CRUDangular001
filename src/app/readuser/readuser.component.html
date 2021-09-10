@@ -1,0 +1,41 @@
+<body>
+    <h1>SHOW MY DETAILS</h1>
+    <form [formGroup]="showuser" (ngSubmit)="showFunction()">
+        <label>
+        <input type="email" placeholder="email" formControlName="email">
+        </label> <br>
+        <button (click)="showuserFun()" type="submit" value="button">show my details</button>
+        <div>
+            <h1>product and customer Table </h1>
+            <table>
+               <thead>
+                  <tr>
+                     <th>_id</th> <br>
+                     <th>UserName</th> <br>
+                     <th>UserId</th> <br>
+                     <th>email</th> <br>
+                     <th>password</th> <br>
+                     <th>phone</th> <br>
+                     <th>address</th> <br>
+                     <th>gender</th> <br>
+                   
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let data of readuser">
+                     <th>{{ data._id }}</th> <br>
+                     <th>{{ data.UserName }}</th> <br>
+                     <td>{{ data.UserId }}</td> <br>
+                     <td>{{ data.email }}</td> <br>
+                     <td>{{ data.password }}</td> <br>
+                     <td>{{ data.phone }}</td> <br>
+                     <td>{{ data.address }}</td> <br>
+                     <td>{{ data.gender }}</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+
+     </form>
+</body> 
+
